@@ -1,0 +1,14 @@
+#uploadBox {
+    width: 30em;
+    height: 18em;
+    border: 2px dashed #212121;
+    border-radius: 5px;
+
+    &.dragIn {
+        background-color: rgba(177, 173, 173, 0.466);
+    }
+
+    &.dragOut {
+        background-color: #fff;
+    }
+}
