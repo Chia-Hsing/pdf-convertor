@@ -51,18 +51,14 @@ const useFiles = options => {
 
             if (fileList.length > 0) {
                 const config = {
-                    headers: { 'content-type': 'multipart/form-data' },
+                    headers: { 'Content-Type': 'multipart/form-data' },
                 }
 
-                let dataArr = []
-
-                for (const val of fileList) {
-                    dataArr.push(val)
-                }
-
-                console.log(dataArr)
                 const dataForm = new FormData()
-                dataForm.append('data', dataArr[0])
+
+                for (let i = 0; i < fileList.length; i++) {
+                    dataForm.append('files', fileList[i])
+                }
 
                 uploadFileHandler(dataForm, config)
             }

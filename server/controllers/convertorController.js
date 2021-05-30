@@ -4,9 +4,6 @@ const chokidar = require('chokidar')
 var PDFImage = require('pdf-image').PDFImage
 
 exports.convertor = (req, res) => {
-    console.log(req.body)
-    console.log(req.files)
-
     const watcher = chokidar.watch('../pdf', {
         ignored: /(^|[\/\\])\../,
         persistent: false,
@@ -18,7 +15,6 @@ exports.convertor = (req, res) => {
 
     const getPDF = () => {
         const dirPath = path.join(__dirname, '../pdf')
-        console.log(__dirname)
         fs.readdir(dirPath, { encoding: 'utf8' }, (err, doc) => {
             if (err) {
                 console.log(err)
